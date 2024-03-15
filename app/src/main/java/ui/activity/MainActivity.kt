@@ -433,7 +433,7 @@ class MainActivity : AppCompatActivity() {
 
         lineList.forEach { 
             if (it.substringAfter("[").substringBefore("]").contains(category)) { categoryLine = lineNumber; categoryFound = 1} 
-            if (categoryFound == 1 && it.substringBefore("=").contains(name)) { nameLine = lineNumber; nameFound = 1 }
+            if (categoryFound == 1 && it.substringBefore("=").replace(" ", "") == name.replace(" ", "")) { nameLine = lineNumber; nameFound = 1 }
             lineNumber++
         }
 
