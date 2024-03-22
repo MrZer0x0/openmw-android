@@ -14,61 +14,7 @@
         <item>win1252</item>
     </string-array>
 
-    <string-array name="gs_factor_strength_into_hand_to_hand_combat_entries">
-        <item>Off</item>
-        <item>Affect Werewolwes</item>
-        <item>Do Not Affect Werewolwes</item>
-    </string-array>
-
-    <string-array name="gs_factor_strength_into_hand_to_hand_combat_values">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
-    <string-array name="gs_show_owned_entries">
-        <item>Off</item>
-        <item>Tool Tip Only</item>
-        <item>Crosshair Only</item>
-        <item>Tool Tip and Crosshair</item>
-    </string-array>
-
-    <string-array name="gs_show_owned_values">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-    </string-array>
-
-    <string-array name="gs_antialiasing_entries">
-        <item>0</item>
-        <item>2</item>
-        <item>4</item>
-        <item>8</item>
-        <item>16</item>
-    </string-array>
-
-    <string-array name="gs_antialiasing_values">
-        <item>0</item>
-        <item>2</item>
-        <item>4</item>
-        <item>8</item>
-        <item>16</item>
-    </string-array>
-
-    <string-array name="gs_groundcover_handling_entries">
-        <item>Off</item>
-        <item>Paging</item>
-        <item>Instancing</item>
-    </string-array>
-
-    <string-array name="gs_groundcover_handling_values">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
-    <string name="general_settings">Setup</string>
+   
     <string name="start_game_label">Start game</string>
     <string name="closeDrawer">Navigation View</string>
     <string name="openDrawer">Navigation View Closed</string>
@@ -171,14 +117,6 @@
 
     <string name="action_generate_navmesh">Generate NavMesh cache</string>
 
-    <string name="activity_settings">Settings</string>
-    <string name="game_mechanics_activity_settings">Game Mechanics</string>
-    <string name="visuals_activity_settings">Visuals</string>
-    <string name="animations_activity_settings">Animations</string>
-    <string name="interface_activity_settings">Interface</string>
-    <string name="bug_fixes_activity_settings">Bug Fixes</string>
-    <string name="miscellaneous_activity_settings">Miscellaneous</string>
-    <string name="engine_activity_settings">Engine Settings</string>
 
     <string name="activity_mods">Mods</string>
     <string name="tab_plugins">Plugins</string>
