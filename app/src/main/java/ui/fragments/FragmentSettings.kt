@@ -42,7 +42,6 @@ import file.GameInstaller
 import ui.activity.ConfigureControls
 import ui.activity.MainActivity
 import ui.activity.ModsActivity
-import ui.activity.SettingsActivity
 import utils.MyApp
 import java.util.*
 import java.io.File
