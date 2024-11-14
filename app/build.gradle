@@ -26,7 +26,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "is.otf.openmw"
+        applicationId "is.otf.openmw_mobile"
         versionCode 49
         versionName calculateVersion()
 
@@ -65,7 +65,7 @@ android {
     productFlavors {
         nightly {
             dimension "version"
-            applicationId "is.otf.openmw"
+            applicationId "is.otf.openmw_mobile"
             versionNameSuffix "-nightly"
         }
     }
