@@ -606,8 +606,8 @@ class MainActivity : AppCompatActivity() {
                 configureDefaultsBin(mapOf(
                         "scaling factor" to "%.2f".format(Locale.ROOT, scaling),
                         // android-specific defaults
-                        "viewing distance" to "2048.0",
-                        "camera sensitivity" to "0.4",
+                        "viewing distance" to "4096.0",
+                        "camera sensitivity" to "0.5",
                         // and a bunch of windows positioning
                         "stats x" to "0.0",
                         "stats y" to "0.0",
@@ -654,7 +654,7 @@ class MainActivity : AppCompatActivity() {
                         "companion y" to "0.0",
                         "companion w" to "0.75",
                         "companion h" to "0.375",
-		    "stretch menu background" to "true",
+		    "stretch menu background" to "true"
                 ))
 		
 
