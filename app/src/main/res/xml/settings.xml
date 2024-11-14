@@ -4,16 +4,6 @@
         android:key="general_settings"
         android:title="@string/general_settings">
 
-        <ListPreference
-            android:key="pref_encoding"
-            android:summary="%s"
-            android:title="@string/pref_encoding"
-            android:dialogTitle="@string/pref_encoding"
-            android:entries="@array/pref_encoding_entries"
-            android:entryValues="@array/pref_encoding_values"
-            android:defaultValue="@string/pref_encoding_default"
-            />
-
         <Preference
             android:key="game_files"
             android:title="@string/game_files"
@@ -115,6 +105,17 @@
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/pref_advanced">
+
+        <ListPreference
+            android:key="pref_encoding"
+            android:summary="%s"
+            android:title="@string/pref_encoding"
+            android:dialogTitle="@string/pref_encoding"
+            android:entries="@array/pref_encoding_entries"
+            android:entryValues="@array/pref_encoding_values"
+            android:defaultValue="@string/pref_encoding_default"
+            />
+        
         <EditTextPreference
             android:key="commandLine"
             android:title="@string/pref_commandLine"
