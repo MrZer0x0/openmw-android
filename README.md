@@ -1,6 +1,5 @@
 
-# OpenMW для Android 
-
+## OpenMW Mobile 📲 для Android 
 ## версия от OTF
 [Telegram](https://t.me/morrowind24)
 
