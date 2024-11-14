@@ -560,7 +560,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val dialog = ProgressDialog.show(
-            this, "", "Starting OpenMW...", true)
+            this, "", "Запуск OpenMW Mobile...", true)
 
         val activity = this
 
@@ -674,7 +674,7 @@ class MainActivity : AppCompatActivity() {
                     runGame()
                 }
             } catch (e: IOException) {
-                Log.e(TAG, "Failed to write config files.", e)
+                Log.e(TAG, "Невозможно записать фаил настроек.", e)
             }
         }
         th.start()
@@ -694,27 +694,27 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_reset_user_config -> {
                 AlertDialog.Builder(this)
-                    .setTitle("Confirmation")
-                    .setMessage("Are you sure you want to reset user configuration?")
-                    .setPositiveButton("Yes") { _, _ ->
+                    .setTitle("Требуется внимание")
+                    .setMessage("Вы хотите сбросить пользовательские настройки?")
+                    .setPositiveButton("Да") { _, _ ->
                         removeUserConfig()
                         Toast.makeText(this, getString(R.string.user_config_was_reset), Toast.LENGTH_SHORT).show()
                     }
-                    .setNegativeButton("No", null)
+                    .setNegativeButton("Нет", null)
                     .show()
                 true
             }
 
             R.id.action_reset_user_resources -> {
                 AlertDialog.Builder(this)
-                    .setTitle("Confirmation")
-                    .setMessage("Are you sure you want to reset user resources?")
-                    .setPositiveButton("Yes") { _, _ ->
+                    .setTitle("Требуется внимание")
+                    .setMessage("Вы хотите сбросить пользовательские настройки?")
+                    .setPositiveButton("Да") { _, _ ->
                         removeStaticFiles()
                         removeResourceFiles()
                         Toast.makeText(this, getString(R.string.user_resources_was_reset), Toast.LENGTH_SHORT).show()
                     }
-                    .setNegativeButton("No", null)
+                    .setNegativeButton("Нет", null)
                     .show()
                 true
             }
@@ -727,7 +727,7 @@ class MainActivity : AppCompatActivity() {
 
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
 
-                Toast.makeText(this, "Theme set to system", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Системная тема", Toast.LENGTH_SHORT).show()
                 true
             }
 
@@ -739,7 +739,7 @@ class MainActivity : AppCompatActivity() {
 
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
-                Toast.makeText(this, "Theme set to light", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Светлая тема", Toast.LENGTH_SHORT).show()
                 true
             }
 
@@ -751,7 +751,7 @@ class MainActivity : AppCompatActivity() {
 
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 
-                Toast.makeText(this, "Theme set to dark", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Темная тема", Toast.LENGTH_SHORT).show()
                 true
             }
 
