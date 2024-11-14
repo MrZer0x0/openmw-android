@@ -26,8 +26,8 @@ android {
     }
 
     defaultConfig {
-        applicationId "is.xyz.omw"
-        versionCode 46
+        applicationId "is.otf.openmw"
+        versionCode 49
         versionName calculateVersion()
 
         minSdkVersion 21
@@ -65,7 +65,7 @@ android {
     productFlavors {
         nightly {
             dimension "version"
-            applicationId "is.xyz.omw_nightly"
+            applicationId "is.otf.openmw"
             versionNameSuffix "-nightly"
         }
     }
