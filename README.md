@@ -1,64 +1,66 @@
-# OpenMW for Android 
 
-[Google Play](https://play.google.com/store/apps/details?id=is.xyz.omw) | [Google Play (Nightly)](https://play.google.com/store/apps/details?id=is.xyz.omw_nightly)
+# OpenMW для Android 
 
-[F-Droid](https://f-droid.org/packages/is.xyz.omw/) | [F-Droid (Nightly)](https://f-droid.org/packages/is.xyz.omw_nightly/)
+## версия от OTF
+[Telegram](https://t.me/morrowind24)
 
-[FAQ & Info](https://omw.xyz.is/)
 
-## Building
+(благодарим за конструктор и труды
+sandstranger, xyzz и sisah)
 
-There are two steps for building OpenMW for Android. The first step is building C/C++ libraries. The second step is building the Java launcher.
+## Сборка
 
-### Prerequisites
+Существует два этапа для сборки OpenMW для Android. Первый этап - это сборка C/C++ библиотек. Второй этап - сборка Java-загрузчика.
 
-You will need some standard tools installed that you probably already have (bash, gcc, g++, sha256sum, unzip).
+### Предварительные условия
 
-CMake 3.6.0 or newer is **required**, you can download the latest version [here](https://cmake.org/download/) (and place in your `PATH`) if your distro ships with an outdated version.
+Вам понадобятся некоторые стандартные инструменты, которые, вероятно, уже установлены (bash, gcc, g++, sha256sum, unzip).
 
-Additionally, to build the launcher you will need Android SDK installed, it is suggested that you use Android Studio which can set it up for you (see step 2).
+CMake 3.6.0 или новее **обязателен**, вы можете загрузить последнюю версию [здесь](https://cmake.org/download/) (и поместить в вашу `PATH`), если ваша дистрибуция поставляется со старой версией.
 
-### Step 1: Build the libraries
+Кроме того, для сборки загрузчика вам понадобится установленный Android SDK, рекомендуется использовать Android Studio, которая может настроить его для вас (см. шаг 2).
 
-Go into the `buildscripts` directory and run `./build.sh`. The script will automatically download the Android native toolchain and all dependencies, and will compile and install them.
+### Шаг 1: Сборка библиотек
 
-### Step 2: Build the Java launcher
+Перейдите в каталог `buildscripts` и выполните `./build.sh`. Скрипт автоматически загрузит Android native toolchain и все зависимости, а также скомпилирует и установит их.
 
-To get an APK file you can install, open the `openmw-android` directory in Android Studio and run the project.
+### Шаг 2: Сборка Java-загрузчика
 
-Alternatively, if you do not have Android Studio installed or would rather not use it, run `./gradlew assembleDebug` from the root directory of this repository. The resulting APK, located at `./app/build/outputs/apk/debug/app-debug.apk`, can be transferred to the device and installed.
+Чтобы получить файл APK, который вы можете установить, откройте каталог `openmw-android` в Android Studio и запустите проект.
 
-## Notes for developers
+В качестве альтернативы, если у вас не установлена Android Studio или вы не хотите ее использовать, выполните `./gradlew assembleDebug` из корневого каталога этого репозитория. Полученный APK, расположенный по адресу `./app/build/outputs/apk/debug/app-debug.apk`, можно перенести на устройство и установить.
 
-### Debugging native code
+## Примечания для разработчиков
 
-You can debug native code with `ndk-gdb`. To use it, once you've built both libraries and the apk and installed the apk, run the application and let it stay on the main menu. Then `cd` to `app/src/main` and run `./gdb.sh [arch]`. The `arch` variable has to match the library your device will be using (one of `arm`, `arm64`, `x86_64`, `x86`; `arm` is the default).
+### Отладка нативного кода
 
-This also automatically enables gdb to use unstripped libraries, so you get proper symbols, source code references, etc.
+Вы можете отлаживать нативный код с помощью `ndk-gdb`. Чтобы использовать его, после сбора библиотек и APK и установки APK запустите приложение и оставьте его на главном меню. Затем выполните `cd` в `app/src/main` и запустите `./gdb.sh [arch]`. Переменная `arch` должна соответствовать библиотеке, которую будет использовать ваше устройство (одна из `arm`, `arm64`, `x86_64`, `x86`; по умолчанию используется `arm`).
 
-### Running Address Sanitizer
+Это также автоматически включает gdb для использования неочищенных библиотек, так что вы получите правильные символы, ссылки на исходный код и т.д.
 
-To compile everything with ASAN:
+### Запуск Address Sanitizer
+
+Чтобы скомпилировать всё с ASAN:
 
 ```
-# Clean previous build
+# Очистить предыдущую сборку
 ./clean.sh
-# Build with ASAN enabled & debug symbols
+# Сборка с включенным ASAN и символами отладки
 ./build.sh --ccache --asan --debug
-# Or: ./build.sh --ccache --asan --debug --arch arm64
+# Или: ./build.sh --ccache --asan --debug --arch arm64
 ```
 
-Then open Android Studio and compile and install the project.
+Затем откройте Android Studio и скомпилируйте и установите проект.
 
-To get symbolized output:
+Чтобы получить символизированный вывод:
 
 ```
 adb logcat | ./tool/asan_symbolize.py --demangle -s ./symbols/armeabi-v7a/
-# Or: adb logcat | ./tool/asan_symbolize.py --demangle -s ./symbols/arm64-v8a/
+# Или: adb logcat | ./tool/asan_symbolize.py --demangle -s ./symbols/arm64-v8a/
 ```
 
-## Credits
+## Спасибо
 
-### Source code
+### Исходный код
 
-Original Java code written by sandstranger. Build scripts originally written by sandstranger and bwhaines.
+Оригинальный Java-код написан sandstranger. Скрипты сборки изначально написаны sandstranger и bwhaines.
