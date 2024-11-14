@@ -538,107 +538,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-
-	// Game Mechanics
-	writeSetting("Game", "uncapped damage fatigue", if(prefs.getBoolean("gs_uncapped_damage_fatigue", false)) "true" else "false")
-
-	writeSetting("Game", "rebalance soul gem values", if(prefs.getBoolean("gs_soulgem_values_rebalance", false)) "true" else "false")
-	writeSetting("Game", "followers attack on sight", if(prefs.getBoolean("gs_followers_defend_immediately", false)) "true" else "false")
-	writeSetting("Game", "barter disposition change is permanent", if(prefs.getBoolean("gs_permanent_barter_disposition_changes", false)) "true" else "false")
-	writeSetting("Game", "NPCs avoid collisions", if(prefs.getBoolean("gs_npc_avoid_collision", false)) "true" else "false")
-	writeSetting("Game", "only appropriate ammunition bypasses resistance", if(prefs.getBoolean("gs_only_weapon_bs", false)) "true" else "false")
-	writeSetting("Game", "normalise race speed", if(prefs.getBoolean("gs_racial_variation_in_speed_fix", false)) "true" else "false")
-	writeSetting("Game", "swim upward correction", if(prefs.getBoolean("gs_swim_upward_correction", false)) "true" else "false")
-	writeSetting("Game", "can loot during death animation", if(prefs.getBoolean("gs_can_loot_during_death_animation", true)) "true" else "false")
-	writeSetting("Game", "enchanted weapons are magical", if(prefs.getBoolean("gs_enchanted_weapons_are_magical", true)) "true" else "false")
-	writeSetting("Game", "classic reflected absorb spells behavior", if(prefs.getBoolean("gs_classic_reflected_absorb_spells_behavior", true)) "true" else "false")
-	writeSetting("Game", "always allow stealing from knocked out actors", if(prefs.getBoolean("gs_always_allow_stealing_from_knocked_out_actors", false)) "true" else "false")
-	writeSetting("Game", "allow actors to follow over water surface", if(prefs.getBoolean("gs_always_allow_npc_to_follow_over_water_surface", true)) "true" else "false")
-	writeSetting("Game", "strength influences hand to hand", prefs.getString("gs_factor_strength_into_hand-to-hand_combat", "0").toString())
-
-	// Visuals terrain
-	writeSetting("Terrain", "object paging min size", prefs.getString("gs_object_paging_min_size", "0.01").toString())
-	writeSetting("Terrain", "distant terrain", if(prefs.getBoolean("gs_distant_land", false)) "true" else "false")
-	writeSetting("Terrain", "object paging active grid", if(prefs.getBoolean("gs_active_grid_object_paging", true)) "true" else "false")
-
-	// Visuals graphics
-	writeSetting("Video", "framerate limit", prefs.getString("gs_framerate_limit", "60").toString())
-
-	// Visuals shaders
-	writeSetting("Shaders", "auto use object normal maps", if(prefs.getBoolean("gs_auto_use_object_normal_maps", false)) "true" else "false")
-	writeSetting("Shaders", "auto use object specular maps", if(prefs.getBoolean("gs_auto_use_object_specular_maps", false)) "true" else "false")
-	writeSetting("Shaders", "auto use terrain normal maps", if(prefs.getBoolean("gs_auto_use_terrain_normal_maps", false)) "true" else "false")
-	writeSetting("Shaders", "auto use terrain specular maps", if(prefs.getBoolean("gs_auto_use_terrain_specular_maps", false)) "true" else "false")
-	writeSetting("Shaders", "apply lighting to environment maps", if(prefs.getBoolean("gs_bump_map_local_lighting", false)) "true" else "false")
-	writeSetting("Shaders", "weather particle occlusion", if(prefs.getBoolean("gs_weather_particle_occlusion", false)) "true" else "false")
-
-	// Visuals fog
-	writeSetting("Fog", "radial fog", if(prefs.getBoolean("gs_radial_fog", false)) "true" else "false")
-	writeSetting("Fog", "exponential fog", if(prefs.getBoolean("gs_exponential_fog", false)) "true" else "false")
-	writeSetting("Fog", "sky blending", if(prefs.getBoolean("gs_sky_blending", false)) "true" else "false")
-
-	// Visuals PostProcessing
-	writeSetting("Shaders", "soft particles", if(prefs.getBoolean("gs_soft_particles", false)) "true" else "false")
-	writeSetting("Post Processing", "transparent postpass", if(prefs.getBoolean("gs_transparent_postpass", false)) "true" else "false")
-
-	// Visuals Shadows
-        if(File(Constants.USER_FILE_STORAGE + "/launcher/extensions.log").exists() &&
-           File(Constants.USER_FILE_STORAGE + "/launcher/extensions.log").readText().contains("GL_EXT_depth_clamp")) {
-
-            writeSetting("Shadows", "enable shadows",
-            if(prefs.getBoolean("gs_object_shadows", false) || prefs.getBoolean("gs_terrain_shadows", false) ||
-                 prefs.getBoolean("gs_actor_shadows", false) || prefs.getBoolean("gs_player_shadows", false))
-                 "true" else "false")
-
-	    writeSetting("Shadows", "object shadows", if(prefs.getBoolean("gs_object_shadows", false)) "true" else "false")
-	    writeSetting("Shadows", "terrain shadows", if(prefs.getBoolean("gs_terrain_shadows", false)) "true" else "false")
-	    writeSetting("Shadows", "actor shadows", if(prefs.getBoolean("gs_actor_shadows", false)) "true" else "false")
-	    writeSetting("Shadows", "player shadows", if(prefs.getBoolean("gs_player_shadows", false)) "true" else "false")
-	    writeSetting("Shadows", "indoor shadows", if(prefs.getBoolean("gs_indoor_shadows", true)) "true" else "false")
-	    writeSetting("Shadows", "shadow map resolution", prefs.getString("gs_shadow_map_resolution", "1024").toString())
-	    writeSetting("Shadows", "compute scene bounds", prefs.getString("gs_shadow_computation_method", "bounds").toString())
-	    writeSetting("Shadows", "maximum shadow map distance", prefs.getString("gs_shadows_distance", "8192").toString())
-	    writeSetting("Shadows", "shadow fade start", prefs.getString("gs_shadows_fade_start", "0.9").toString())
-	    writeSetting("Shadows", "percentage closer filtering", prefs.getString("gs_shadows_pcf", "1").toString())
-        }
-
-	// Animations
-	writeSetting("Game", "player movement ignores animation", if(prefs.getBoolean("gs_player_movement_ignores_animation", false)) "true" else "false")
-	writeSetting("Game", "use magic item animations", if(prefs.getBoolean("gs_use_magic_item_animation", false)) "true" else "false")
-	writeSetting("Game", "use additional anim sources", if(prefs.getBoolean("gs_use_additional_animation_sources", false)) "true" else "false")
-	writeSetting("Game", "weapon sheathing", if(prefs.getBoolean("gs_weapon_sheating", false)) "true" else "false")
-	writeSetting("Game", "shield sheathing", if(prefs.getBoolean("gs_shield_sheating", false)) "true" else "false")
-	writeSetting("Game", "graphic herbalism", if(prefs.getBoolean("gs_enable_graphics_herbalism", true)) "true" else "false")
-	writeSetting("Game", "smooth movement", if(prefs.getBoolean("gs_smooth_movement", false)) "true" else "false")
-	writeSetting("Game", "turn to movement direction", if(prefs.getBoolean("gs_turn_to_movement_direction", false)) "true" else "false")
-	writeSetting("Game", "smooth animation transitions", if(prefs.getBoolean("gs_smooth_animation_transitions", false)) "true" else "false")
-
-	// Interface
-	writeSetting("Game", "show owned", prefs.getString("gs_show_owned", "0").toString())
-	writeSetting("Game", "show effect duration", if(prefs.getBoolean("gs_show_effect_duration", false)) "true" else "false")
-	writeSetting("Game", "show enchant chance", if(prefs.getBoolean("gs_show_enchant_chance", false)) "true" else "false")
-	writeSetting("Game", "show melee info", if(prefs.getBoolean("gs_show_melee_info", false)) "true" else "false")
-	writeSetting("Game", "show projectile damage", if(prefs.getBoolean("gs_show_projectile_damage", false)) "true" else "false")
-	writeSetting("GUI", "color topic enable", if(prefs.getBoolean("gs_change_dialogue_topic_color", false)) "true" else "false")
-	writeSetting("GUI", "stretch menu background", if(prefs.getBoolean("gs_stretch_menu_background", false)) "true" else "false")
-	writeSetting("Map", "allow zooming", if(prefs.getBoolean("gs_can_zoom_on_maps", false)) "true" else "false")
-
-	// Bug Fixes
-	writeSetting("Game", "prevent merchant equipping", if(prefs.getBoolean("gs_merchant_equipping_fix", false)) "true" else "false")
-	writeSetting("Game", "trainers training skills based on base skill", if(prefs.getBoolean("gs_trainers_bs", false)) "true" else "false")
-
-	// Miscellaneous
-	writeSetting("Saves", "timeplayed", if(prefs.getBoolean("gs_add_time_to_saves", false)) "true" else "false")
-	writeSetting("Saves", "max quicksaves", prefs.getString("gs_maximum_quicksaves", "1").toString())
-
-	// Engine Settings
-	writeSetting("Groundcover", "enabled", if(prefs.getString("gs_groundcover_handling", "0") == "2") "true" else "false")
-	writeSetting("Groundcover", "paging", if(prefs.getString("gs_groundcover_handling", "0") == "1") "true" else "false")
-	writeSetting("Navigator", "enable", if(prefs.getBoolean("gs_build_navmesh", true)) "true" else "false")
-	writeSetting("Navigator", "write to navmeshdb", if(prefs.getBoolean("gs_write_navmesh", false)) "true" else "false")
-	writeSetting("Navigator", "async nav mesh updater threads", prefs.getString("gs_navmesh_threads", "1").toString())
-	writeSetting("Physics", "async num threads", prefs.getString("gs_physics_threads", "1").toString())
-	writeSetting("Cells", "preload num threads", prefs.getString("gs_preload_threads", "1").toString())
     }
 
     private fun startGame() {
@@ -754,8 +653,10 @@ class MainActivity : AppCompatActivity() {
                         "companion x" to "0.25",
                         "companion y" to "0.0",
                         "companion w" to "0.75",
-                        "companion h" to "0.375"
+                        "companion h" to "0.375",
+		    "stretch menu background" to "true",
                 ))
+		
 
 		writeUserSettings()
 
