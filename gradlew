@@ -6,10 +6,7 @@
 ##
 ##############################################################################
 
-rm -rf app/src/main/assets/libopenmw/resources/vfs/textures/ui
-cp patch/immersive_compass_inner.png app/src/main/assets/libopenmw/resources/vfs/textutes/ui/immersive_compass_inner.png
-cp patch/immersive_sneak_eye.dds app/src/main/assets/libopenmw/resources/vfs/textutes/ui/immersive_sneak_eye.dds
-cp patch/immersive_compass_outer.png app/src/main/assets/libopenmw/resources/vfs/textutes/ui/immersive_compass_outer.png
+cp patch/immersive_sneak_eye.dds app/src/main/assets/libopenmw/resources/vfs/textutes/sneak_eye.dds
 cp patch/openmw_hud.layout app/src/main/assets/libopenmw/resources/vfs/mygui/openmw_hud.layout
 cp patch/openmw_chargen_race.layout app/src/main/assets/libopenmw/resources/vfs/mygui/openmw_chargen_race.layout
 
