@@ -20,11 +20,6 @@
             />
 
         <Preference
-            android:key="pref_game_settings"
-            android:title="Game Settings"
-            />
-
-        <Preference
             android:title="@string/mods"
             android:key="pref_mods"
             />
