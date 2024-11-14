@@ -560,7 +560,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val dialog = ProgressDialog.show(
-            this, "", "Preparing for launch...", true)
+            this, "", "Starting OpenMW...", true)
 
         val activity = this
 
@@ -654,7 +654,15 @@ class MainActivity : AppCompatActivity() {
                         "companion y" to "0.0",
                         "companion w" to "0.75",
                         "companion h" to "0.375",
-		    "stretch menu background" to "true"
+		        "stretch menu background" to "true",
+			"use additional anim sources" to "true",
+                        "prevent merchant equipping" to "true",
+                        "framerate limit" to "60.60",
+                        "color topic enable" to "true",
+			"preferred locales" to "ru,en",
+			"shader" to "true"
+			
+			
                 ))
 		
 
