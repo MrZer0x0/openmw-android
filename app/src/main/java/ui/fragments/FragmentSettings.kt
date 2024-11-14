@@ -61,12 +61,6 @@ class FragmentSettings : PreferenceFragment(), OnSharedPreferenceChangeListener 
             true
         }
 
-        findPreference("pref_game_settings").setOnPreferenceClickListener {
-            val intent = Intent(activity, SettingsActivity::class.java)
-            this.startActivity(intent)
-            true
-        }
-
         findPreference("pref_mods").setOnPreferenceClickListener {
             // Just prevent crash here if data files are not selected
             val sharedPref = preferenceScreen.sharedPreferences
