@@ -38,9 +38,9 @@
     <string name="pref_screen_keeper">Держать экран всегда включенным</string>
     <string name="pref_touchpadSensitivity">Чувствительность виртуального тачпада</string>
     <string name="action_reset_config">Сбросить статические конфигурационные файлы</string>
-    <string name="action_reset_user_config">Сбросить пользовательские конфигурационные файлы</string>
-    <string name="action_reset_user_resources">Сбросить пользовательские ресурсы</string>
-    <string name="action_reset_screen_controls">Сбросить элементы управления на экране</string>
+    <string name="action_reset_user_config">Сбросить конфигурации</string>
+    <string name="action_reset_user_resources">Сбросить ресурсы</string>
+    <string name="action_reset_screen_controls">Сбросить элементы управления</string>
     <string name="action_show_screen_controls">Элементы управления на экране…</string>
     <string name="pref_hide_controls">Скрыть кнопки на экране</string>
     <string name="config_was_reset">Статическая конфигурация сброшена на значения по умолчанию</string>
