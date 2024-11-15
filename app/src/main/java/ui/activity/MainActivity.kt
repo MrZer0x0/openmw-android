@@ -682,7 +682,6 @@ class MainActivity : AppCompatActivity() {
 "smooth movement" to "true",
 			"always allow stealing from knocked out actors" to "true",
 			"lod factor" to "0.7",
-"vertex lod mod" to "- 1",
 "composite map level" to "- 2",
 "composite map resolution" to "512",
 "max composite geometry size" to "4.0",
