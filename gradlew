@@ -6,7 +6,7 @@
 ##
 ##############################################################################
 
-cp patch/immersive_sneak_eye.dds app/src/main/assets/libopenmw/resources/vfs/textutes/sneak_eye.dds
+cp patch/immersive_sneak_eye.dds app/src/main/assets/libopenmw/resources/vfs/sneak_eye.dds
 cp patch/openmw_hud.layout app/src/main/assets/libopenmw/resources/vfs/mygui/openmw_hud.layout
 cp patch/openmw_chargen_race.layout app/src/main/assets/libopenmw/resources/vfs/mygui/openmw_chargen_race.layout
 
