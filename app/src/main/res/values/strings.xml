@@ -30,9 +30,9 @@
     <string name="pref_envLine">Пользовательские переменные окружения</string>
     <string name="pref_ui">Пользовательский интерфейс</string>
     <string name="pref_textureShrinking">Сжатие текстур</string>
-    <string name="pref_textureShrinking_default">нет</string>
+    <string name="pref_textureShrinking_default">none</string>
     <string name="pref_shadersDir">Предустановки шейдеров</string>
-    <string name="pref_shadersDir_default">нет</string>
+    <string name="pref_shadersDir_default">none</string>
     <string name="pref_uiScaling">Коэффициент масштабирования интерфейса</string>
     <string name="uiScaling_auto">Авто (%1$.2f)</string>
     <string name="pref_screen_keeper">Держать экран всегда включенным</string>
@@ -84,7 +84,7 @@
     <string name="pref_avoid16bits">Избегать 16-битных цветов</string>
     <string name="mods">Моды…</string>
     <string name="action_about">О программе</string>
-    <string name="about_title">О OMW</string>
+    <string name="about_title">О OpenMW Mobile</string>
 
     <string name="action_theme">Тема</string>
     <string name="action_theme_system">Система</string>
@@ -113,7 +113,7 @@
     <string name="tab_plugins">Плагины</string>
     <string name="tab_resources">Ресурсы</string>
     <string name="tab_dirs">Директории</string>
-    <string name="tab_groundcover">Засадные покрытия</string>
+    <string name="tab_groundcover">Травяное покрытия</string>
     <string name="data_error_title">Ошибка при поиске файлов данных</string>
     <string name="data_error_message">Пожалуйста, выберите директорию, которая содержит файл "Morrowind.ini" и директорию "Data Files".</string>
     <string name="permissions_error_title">Нет разрешений</string>
@@ -132,9 +132,9 @@
 
     <string name="pref_mouse_mode">Режим мыши в меню</string>
     <string-array name="pref_mouse_mode_entries">
-        <item>Гибридный</item>
-        <item>Относительные джойстиковые управления</item>
-        <item>Абсолютные сенсорные управления</item>
+        <item>Гибридное управление</item>
+        <item>Управления джойстиком</item>
+        <item>Абсолютное сенсорное управление</item>
     </string-array>
     <string-array name="pref_mouse_mode_values">
         <item>hybrid</item>
