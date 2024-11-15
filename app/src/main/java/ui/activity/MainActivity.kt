@@ -421,9 +421,7 @@ class MainActivity : AppCompatActivity() {
         File(Constants.USER_OPENMW_CFG).writeText("# This is the user openmw.cfg. Feel free to modify it as you wish.\n")
     }
 
-    /**
-     * Reset user resource files to default
-     */
+    
     private fun removeResourceFiles() {
         reinstallStaticFiles()
         deleteRecursive(File(Constants.USER_FILE_STORAGE + "/resources/"))
@@ -739,7 +737,7 @@ class MainActivity : AppCompatActivity() {
             R.id.action_reset_user_resources -> {
                 AlertDialog.Builder(this)
                     .setTitle("Требуется внимание")
-                    .setMessage("Вы хотите сбросить пользовательские настройки?")
+                    .setMessage("Вы хотите сбросить пользовательские ресурсы?")
                     .setPositiveButton("Да") { _, _ ->
                         removeStaticFiles()
                         removeResourceFiles()
