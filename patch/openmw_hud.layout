@@ -71,7 +71,7 @@
                 <Property key="NeedMouse" value="false"/>
                 <Widget type="ImageBox" skin="ImageBox" position="0 0 64 64" align="Left Top" name="SneakImage">
                     <Property key="NeedMouse" value="false"/>
-                    <Property key="ImageTexture" value="textures\sneak_eye.dds"/>
+                    <Property key="ImageTexture" value="sneak_eye.dds"/>
                 </Widget>
             </Widget>
         </Widget>
