@@ -536,6 +536,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+	writeSetting("Shadows", "enable shadows", if(prefs.getBoolean("shadows_key", false)) "true" else "false")
+	writeSetting("Shadows", "object shadows", if(prefs.getBoolean("shadowso_key", false)) "true" else "false")
+	writeSetting("Input", "enable gyroscope", if(prefs.getBoolean("gyroscope_key", false)) "true" else "false")
+	writeSetting("Cells", "preload doors", if(prefs.getBoolean("preload_key", false)) "true" else "false")
+	writeSetting("Terrain", "distant terrain", if(prefs.getBoolean("terrain_key", false)) "true" else "false")
     }
 
     private fun startGame() {
@@ -689,7 +694,14 @@ class MainActivity : AppCompatActivity() {
 "object paging merge factor" to "100000",
 "object paging min size" to "1",
 "object paging min size merge factor" to "0.039",
-"object paging min size cost multiplier" to "1"
+"object paging min size cost multiplier" to "1",
+"player shadows" to "true",
+"actor shadows" to "true",
+"maximum shadow map distance" to "4096"
+
+			
+			
+		
                 ))
 		
 
