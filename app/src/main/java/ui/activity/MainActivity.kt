@@ -234,7 +234,7 @@ class MainActivity : AppCompatActivity() {
                 .setTitle(R.string.no_content_files_title)
                 .setMessage(R.string.no_content_files_message)
                 .setNeutralButton(R.string.dialog_howto) { _, _ ->
-                    openUrl("https://omw.xyz.is/mods.html")
+                    openUrl("https://t.me/morrowind24")
                 }
                 .setNegativeButton(R.string.no_content_files_dismiss) { _, _ -> startGame() }
                 .setPositiveButton(R.string.configure_mods) { _, _ ->
@@ -660,9 +660,25 @@ class MainActivity : AppCompatActivity() {
                         "framerate limit" to "60.60",
                         "color topic enable" to "true",
 			"preferred locales" to "ru,en",
-			"shader" to "true"
-			
-			
+			"shader" to "true",
+			"small feature culling pixel size" to "9.0",
+			"reverse z" to "true",
+		"preload num threads" to "2",
+		"preload doors" to "false",
+	"actor collision shape type" to "2",
+	"show owned" = "3",
+"show projectile damage" to "true",
+"show melee info" to "true",
+"show enchant chance" to "true",
+"strength influences hand to hand" to "2",
+"weapon sheathing" to "true",
+"shield sheathing" to "true",
+		"max lights" to "16",
+		"enable" to "false",
+		"enabled" to "true",
+		"load unsupported nif files" to "true",
+		"max quicksaves" to "1",
+		"anisotropy" to "0"
                 ))
 		
 
