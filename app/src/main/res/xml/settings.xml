@@ -14,13 +14,34 @@
             android:key="pref_mods"
             />
     </PreferenceCategory>
-
+<PreferenceCategory android:title="@string/category_performance">
+     <CheckBoxPreference
+            android:key="terrain_key"
+            android:title="Включить удалённый ландшафт"
+            android:summary="Данная опция увеличивает максимальную дальность прорисовки (может снить производительность!) "/>
+    <CheckBoxPreference
+            android:key="preload_key"
+            android:title="Включить теневую подгрузку локаций"
+            android:summary="Данная опция подгружает локацию *за дверью*, что ускарят подгрузку локаций при путешествии (может снизить производительность!) "/>
+    <CheckBoxPreference
+            android:key="shadows_key"
+            android:title="Включить тени"
+            android:summary="Данная опция включает тени от игрока и NPC (Работает на большинстве устройств) "/>
+    <CheckBoxPreference
+            android:key="shadowso_key"
+            android:title="Включить тени объектов"
+            android:summary="Требуется включить тени игрока и NPC! Данная опция включает тени от объектов (Могут вызвать графические артефакты на некотоых ускорителях) "/>
+    </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/pref_ui">
         <Preference
             android:title="@string/action_show_screen_controls"
             android:key="pref_controls"
             />
+        <CheckBoxPreference
+            android:key="gyroscope_key"
+            android:title="Включить управление гироскопом"
+            android:summary="Данная опция включает управление камерой с помощью аппаратного гироскопа (Работает на большинстве устройств) "/>
 
         <EditTextPreference
             android:key="pref_uiScaling"
