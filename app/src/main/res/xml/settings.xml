@@ -61,19 +61,6 @@
             android:title="@string/pref_screen_keeper"/>
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="@string/category_performance">
-        <ListPreference
-            android:key="pref_physicsFPS2"
-            android:title="@string/pref_physicsFPS2"
-            android:dialogTitle="@string/pref_physicsFPS2"
-            android:entries="@array/pref_physicsFPS2_entries"
-            android:entryValues="@array/pref_physicsFPS2_entries"
-            android:defaultValue="@string/pref_physicsFPS2_default"
-            android:summary="%s"
-            />
-
-    </PreferenceCategory>
-
     <PreferenceCategory android:title="@string/pref_graphics">
         <EditTextPreference
             android:key="pref_customResolution"
@@ -90,7 +77,7 @@
         <CheckBoxPreference
             android:key="pref_avoid16bits"
             android:title="@string/pref_avoid16bits" 
-            android:summary="Disabling should help with memory usage if software decompression is used, may increase loading times? decrease visual quality? need testing"
+            android:summary="Внимание! Экспериментальная опция, может привести к графическим искажениям"
             android:defaultValue="true"/>
 
         <ListPreference
