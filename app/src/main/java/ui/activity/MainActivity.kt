@@ -545,7 +545,7 @@ else if (theme == 1) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MOD
 	writeSetting("Terrain", "distant terrain", if(prefs.getBoolean("terrain_key", false)) "true" else "false")
 	writeSetting("Shaders", "force shaders", if(prefs.getBoolean("shaders_key", false)) "true" else "false")
     
-    val framerate limit = prefs.getInt("fps_limit_key", 60)
+    val fpslimit = prefs.getInt("fps_limit_key", 60)
     writeSetting("Video", "framerate limit", fpsLimit.toString())
 	} 
     }
