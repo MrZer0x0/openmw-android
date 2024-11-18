@@ -88,11 +88,13 @@ class MainActivity : AppCompatActivity() {
         PermissionHelper.getWriteExternalStoragePermission(this@MainActivity)
         setContentView(R.layout.main)
         prefs = PreferenceManager.getDefaultSharedPreferences(this)
+	
+AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES) 
 
-        val theme = prefs.getInt(getString(R.string.theme), 0)
-        if(theme == 0) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-        else if(theme == 1) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        else AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+val theme = prefs.getInt(getString(R.string.theme), 0)
+if (theme == 0) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+else if (theme == 1) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
 
         fragmentManager.beginTransaction()
             .replace(R.id.content_frame, FragmentSettings()).commit()
@@ -541,6 +543,11 @@ class MainActivity : AppCompatActivity() {
 	writeSetting("Input", "enable gyroscope", if(prefs.getBoolean("gyroscope_key", false)) "true" else "false")
 	writeSetting("Cells", "preload doors", if(prefs.getBoolean("preload_key", false)) "true" else "false")
 	writeSetting("Terrain", "distant terrain", if(prefs.getBoolean("terrain_key", false)) "true" else "false")
+	writeSetting("Shaders", "force shaders", if(prefs.getBoolean("shaders_key", false)) "true" else "false")
+    
+    val framerate limit = prefs.getInt("fps_limit_key", 60)
+    writeSetting("Video", "framerate limit", fpsLimit.toString())
+	} 
     }
 
     private fun startGame() {
@@ -697,7 +704,11 @@ class MainActivity : AppCompatActivity() {
 "object paging min size cost multiplier" to "1",
 "player shadows" to "true",
 "actor shadows" to "true",
-"maximum shadow map distance" to "4096"
+"maximum shadow map distance" to "4096",
+"auto use object normal maps" to "true",
+"auto use object specular maps" to "true",
+"auto use terrain normal maps" to "true",
+"auto use terrain specular maps" to "true"
 
 			
 			
