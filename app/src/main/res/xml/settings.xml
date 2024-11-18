@@ -15,10 +15,25 @@
             />
     </PreferenceCategory>
 <PreferenceCategory android:title="@string/category_performance">
-     <CheckBoxPreference
+    <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:key="fps_limit_key"
+        android:title="FPS Limit"
+        android:summary="Выберите ограничение FPS"
+        android:dialogTitle="Выберите FPS Limit"
+        android:entries="@array/fps_options"
+        android:entryValues="@array/fps_values"
+        android:defaultValue="60" />
+</PreferenceScreen>
+    
+    <CheckBoxPreference
             android:key="terrain_key"
             android:title="Включить удалённый ландшафт"
             android:summary="Данная опция увеличит максимальную дальность прорисовки (может снизить производительность!) "/>
+    <CheckBoxPreference
+            android:key="shaders_key"
+            android:title="Включить шейдеры"
+            android:summary="Данная опция использовать карты нормалей и карты отражений(может снизить производительность!) "/>
     <CheckBoxPreference
             android:key="preload_key"
             android:title="Включить теневую подгрузку локаций"
@@ -38,10 +53,7 @@
             android:title="@string/action_show_screen_controls"
             android:key="pref_controls"
             />
-        <CheckBoxPreference
-            android:key="gyroscope_key"
-            android:title="Включить управление гироскопом"
-            android:summary="Данная опция включает управление камерой с помощью аппаратного гироскопа (Работает на большинстве устройств) "/>
+        
 
         <EditTextPreference
             android:key="pref_uiScaling"
@@ -60,7 +72,10 @@
             android:defaultValue="@string/pref_mouse_mode_default"
             android:summary="%s"
             />
-
+<CheckBoxPreference
+            android:key="gyroscope_key"
+            android:title="Включить управление гироскопом"/>
+        
         <CheckBoxPreference
             android:key="pref_hide_controls"
             android:title="@string/pref_hide_controls" />
