@@ -14,6 +14,19 @@
         <item>win1252</item>
     </string-array>
 
+    <string-array name="fps_options">
+     <item>30FPS</item>
+    <item>45FPS</item>
+    <item>60FPS</item>
+    <item>90FPS</item>   
+</string-array>
+<string-array name="fps_values">
+    <item>30</item>
+    <item>45</item>
+    <item>60</item>
+    <item>90</item>
+</string-array>
+
 
     <string name="general_settings">Настройки</string>
     <string name="start_game_label">Начать игру</string>
