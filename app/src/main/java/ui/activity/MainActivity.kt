@@ -540,8 +540,8 @@ class MainActivity : AppCompatActivity() {
 	writeSetting("Shadows", "object shadows", if(prefs.getBoolean("shadowso_key", false)) "true" else "false")
 	writeSetting("Input", "enable gyroscope", if(prefs.getBoolean("gyroscope_key", false)) "true" else "false")
 	writeSetting("Cells", "preload doors", if(prefs.getBoolean("preload_key", false)) "true" else "false")
-	writeSetting("Terrain", "distant terrain", if(prefs.getBoolean("terrain_key", false)) "true" else "false")
-	writeSetting("Shaders", "force shaders", if(prefs.getBoolean("shaders_key", false)) "true" else "false")
+	writeSetting("Terrain", "distant terrain", if(prefs.getBoolean("terrain_key", false)) "true" else "false"
+writeSetting("Shaders", "force shaders", if(prefs.getBoolean("shaders_key", false)) "true" else "false")
     }
 
     private fun startGame() {
@@ -564,7 +564,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val dialog = ProgressDialog.show(
-            this, "", "Р—Р°РїСѓСЃРє OpenMW Mobile...", true)
+            this, "", "Запуск OpenMW Mobile...", true)
 
         val activity = this
 
@@ -703,7 +703,6 @@ class MainActivity : AppCompatActivity() {
 "auto use object specular maps" to "true",
 "auto use terrain normal maps" to "true",
 "auto use terrain specular" to "true"
-			
 
 			
 			
@@ -719,7 +718,7 @@ class MainActivity : AppCompatActivity() {
                     runGame()
                 }
             } catch (e: IOException) {
-                Log.e(TAG, "РќРµРІРѕР·РјРѕР¶РЅРѕ Р·Р°РїРёСЃР°С‚СЊ С„Р°РёР» РЅР°СЃС‚СЂРѕРµРє.", e)
+                Log.e(TAG, "Невозможно записать фаил настроек.", e)
             }
         }
         th.start()
@@ -739,27 +738,27 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_reset_user_config -> {
                 AlertDialog.Builder(this)
-                    .setTitle("РўСЂРµР±СѓРµС‚СЃСЏ РІРЅРёРјР°РЅРёРµ")
-                    .setMessage("Р’С‹ С…РѕС‚РёС‚Рµ СЃР±СЂРѕСЃРёС‚СЊ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРёРµ РЅР°СЃС‚СЂРѕР№РєРё?")
-                    .setPositiveButton("Р”Р°") { _, _ ->
+                    .setTitle("Требуется внимание")
+                    .setMessage("Вы хотите сбросить пользовательские настройки?")
+                    .setPositiveButton("Да") { _, _ ->
                         removeUserConfig()
                         Toast.makeText(this, getString(R.string.user_config_was_reset), Toast.LENGTH_SHORT).show()
                     }
-                    .setNegativeButton("РќРµС‚", null)
+                    .setNegativeButton("Нет", null)
                     .show()
                 true
             }
 
             R.id.action_reset_user_resources -> {
                 AlertDialog.Builder(this)
-                    .setTitle("РўСЂРµР±СѓРµС‚СЃСЏ РІРЅРёРјР°РЅРёРµ")
-                    .setMessage("Р’С‹ С…РѕС‚РёС‚Рµ СЃР±СЂРѕСЃРёС‚СЊ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРёРµ СЂРµСЃСѓСЂСЃС‹?")
-                    .setPositiveButton("Р”Р°") { _, _ ->
+                    .setTitle("Требуется внимание")
+                    .setMessage("Вы хотите сбросить пользовательские ресурсы?")
+                    .setPositiveButton("Да") { _, _ ->
                         removeStaticFiles()
                         removeResourceFiles()
                         Toast.makeText(this, getString(R.string.user_resources_was_reset), Toast.LENGTH_SHORT).show()
                     }
-                    .setNegativeButton("РќРµС‚", null)
+                    .setNegativeButton("Нет", null)
                     .show()
                 true
             }
@@ -772,7 +771,7 @@ class MainActivity : AppCompatActivity() {
 
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
 
-                Toast.makeText(this, "РЎРёСЃС‚РµРјРЅР°СЏ С‚РµРјР°", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Системная тема", Toast.LENGTH_SHORT).show()
                 true
             }
 
@@ -784,7 +783,7 @@ class MainActivity : AppCompatActivity() {
 
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
-                Toast.makeText(this, "РЎРІРµС‚Р»Р°СЏ С‚РµРјР°", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Светлая тема", Toast.LENGTH_SHORT).show()
                 true
             }
 
@@ -796,7 +795,7 @@ class MainActivity : AppCompatActivity() {
 
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 
-                Toast.makeText(this, "РўРµРјРЅР°СЏ С‚РµРјР°", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Темная тема", Toast.LENGTH_SHORT).show()
                 true
             }
 
