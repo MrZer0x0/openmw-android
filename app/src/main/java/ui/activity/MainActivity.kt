@@ -544,9 +544,6 @@ else if (theme == 1) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MOD
 	writeSetting("Cells", "preload doors", if(prefs.getBoolean("preload_key", false)) "true" else "false")
 	writeSetting("Terrain", "distant terrain", if(prefs.getBoolean("terrain_key", false)) "true" else "false")
 	writeSetting("Shaders", "force shaders", if(prefs.getBoolean("shaders_key", false)) "true" else "false")
-    
-    val fpslimit = prefs.getInt("fps_limit_key", 60)
-    writeSetting("Video", "framerate limit", fpsLimit.toString())
 	} 
     }
 
