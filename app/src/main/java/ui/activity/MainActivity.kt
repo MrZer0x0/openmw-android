@@ -89,9 +89,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main)
         prefs = PreferenceManager.getDefaultSharedPreferences(this)
 
-        val theme = prefs.getInt(getString(R.string.theme), 0)
-        if(theme == 0) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-        else if(theme == 1) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        val theme = prefs.getInt(getString(R.string.theme), 2) // Изменено значение по умолчанию на 2 (темная тема)
+        if (theme == 0) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+        else if (theme == 1) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         else AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 
         fragmentManager.beginTransaction()
@@ -110,7 +110,7 @@ class MainActivity : AppCompatActivity() {
         File(Constants.USER_CONFIG).mkdirs()
         File(Constants.USER_FILE_STORAGE + "/launcher/icons").mkdirs()
         if (!File(Constants.USER_OPENMW_CFG).exists())
-            File(Constants.USER_OPENMW_CFG).writeText("# This is the user openmw.cfg. Feel free to modify it as you wish.\n")
+            File(Constants.USER_OPENMW_CFG).writeText("# This is the user openmw.cfg. Feel free to modify it as you wish.\n\nfallback=LightAttenuation_UseConstant,0\nfallback=LightAttenuation_ConstantValue,0.318\nfallback=LightAttenuation_UseLinear,0\nfallback=LightAttenuation_LinearMethod,1\nfallback=LightAttenuation_LinearValue,1.0\nfallback=LightAttenuation_LinearRadiusMult,1.0\nfallback=LightAttenuation_UseQuadratic,1\nfallback=LightAttenuation_QuadraticMethod,2\nfallback=LightAttenuation_QuadraticValue,13.5\nfallback=LightAttenuation_QuadraticRadiusMult,2.0\nfallback=LightAttenuation_OutQuadInLin,0")
 
         // create icons files hint
         if (!File(Constants.USER_FILE_STORAGE + "/launcher/icons/paste custom icons here.txt").exists())
@@ -119,7 +119,7 @@ class MainActivity : AppCompatActivity() {
 
         // create current mods dir in case someone deleted it
         val modsDir = PreferenceManager.getDefaultSharedPreferences(this).getString("mods_dir", "")!!
-        if (modsDir != "" ) File(modsDir).mkdirs()
+        if (modsDir != "") File(modsDir).mkdirs()
     }
 
     /**
