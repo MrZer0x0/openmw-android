@@ -700,7 +700,7 @@ class MainActivity : AppCompatActivity() {
 "actor shadows" to "true",
 "maximum shadow map distance" to "4096",
 "auto use object normal maps" to "true",
-"auto use object specular maps" to "true"
+"auto use object specular maps" to "true",
 "auto use terrain normal maps" to "true",
 "auto use terrain specular" to "true"
 			
