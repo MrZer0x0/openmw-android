@@ -541,15 +541,6 @@ class MainActivity : AppCompatActivity() {
 	writeSetting("Input", "enable gyroscope", if(prefs.getBoolean("gyroscope_key", false)) "true" else "false")
 	writeSetting("Cells", "preload doors", if(prefs.getBoolean("preload_key", false)) "true" else "false")
 	writeSetting("Terrain", "distant terrain", if(prefs.getBoolean("terrain_key", false)) "true" else "false")
-val shadersEnabled = prefs.getBoolean("shaders_key", false)
-writeMultipleSettings("Shaders", mapOf(
-    "force shaders" to shadersEnabled.toString(),
-    "auto use object normal maps" to if (shadersEnabled) "true" else "false",
-    "auto use object specular maps" to if (shadersEnabled) "true" else "false",
-    "auto use terrain normal maps" to if (shadersEnabled) "true" else "false",
-    "auto use terrain specular" to if (shadersEnabled) "true" else "false"
-))
-
     }
 
     private fun startGame() {
