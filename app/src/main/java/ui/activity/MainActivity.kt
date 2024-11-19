@@ -88,13 +88,11 @@ class MainActivity : AppCompatActivity() {
         PermissionHelper.getWriteExternalStoragePermission(this@MainActivity)
         setContentView(R.layout.main)
         prefs = PreferenceManager.getDefaultSharedPreferences(this)
-	
-AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES) 
 
-val theme = prefs.getInt(getString(R.string.theme), 0)
-if (theme == 0) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-else if (theme == 1) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-
+        val theme = prefs.getInt(getString(R.string.theme), 0)
+        if(theme == 0) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+        else if(theme == 1) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        else AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 
         fragmentManager.beginTransaction()
             .replace(R.id.content_frame, FragmentSettings()).commit()
@@ -544,7 +542,6 @@ else if (theme == 1) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MOD
 	writeSetting("Cells", "preload doors", if(prefs.getBoolean("preload_key", false)) "true" else "false")
 	writeSetting("Terrain", "distant terrain", if(prefs.getBoolean("terrain_key", false)) "true" else "false")
 	writeSetting("Shaders", "force shaders", if(prefs.getBoolean("shaders_key", false)) "true" else "false")
-	} 
     }
 
     private fun startGame() {
@@ -567,7 +564,7 @@ else if (theme == 1) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MOD
         }
 
         val dialog = ProgressDialog.show(
-            this, "", "Запуск OpenMW Mobile...", true)
+            this, "", "Р—Р°РїСѓСЃРє OpenMW Mobile...", true)
 
         val activity = this
 
@@ -703,9 +700,10 @@ else if (theme == 1) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MOD
 "actor shadows" to "true",
 "maximum shadow map distance" to "4096",
 "auto use object normal maps" to "true",
-"auto use object specular maps" to "true",
+"auto use object specular maps" to "true"
 "auto use terrain normal maps" to "true",
-"auto use terrain specular maps" to "true"
+"auto use terrain specular" to "true"
+			
 
 			
 			
@@ -721,7 +719,7 @@ else if (theme == 1) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MOD
                     runGame()
                 }
             } catch (e: IOException) {
-                Log.e(TAG, "Невозможно записать фаил настроек.", e)
+                Log.e(TAG, "РќРµРІРѕР·РјРѕР¶РЅРѕ Р·Р°РїРёСЃР°С‚СЊ С„Р°РёР» РЅР°СЃС‚СЂРѕРµРє.", e)
             }
         }
         th.start()
@@ -741,27 +739,27 @@ else if (theme == 1) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MOD
         return when (item.itemId) {
             R.id.action_reset_user_config -> {
                 AlertDialog.Builder(this)
-                    .setTitle("Требуется внимание")
-                    .setMessage("Вы хотите сбросить пользовательские настройки?")
-                    .setPositiveButton("Да") { _, _ ->
+                    .setTitle("РўСЂРµР±СѓРµС‚СЃСЏ РІРЅРёРјР°РЅРёРµ")
+                    .setMessage("Р’С‹ С…РѕС‚РёС‚Рµ СЃР±СЂРѕСЃРёС‚СЊ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРёРµ РЅР°СЃС‚СЂРѕР№РєРё?")
+                    .setPositiveButton("Р”Р°") { _, _ ->
                         removeUserConfig()
                         Toast.makeText(this, getString(R.string.user_config_was_reset), Toast.LENGTH_SHORT).show()
                     }
-                    .setNegativeButton("Нет", null)
+                    .setNegativeButton("РќРµС‚", null)
                     .show()
                 true
             }
 
             R.id.action_reset_user_resources -> {
                 AlertDialog.Builder(this)
-                    .setTitle("Требуется внимание")
-                    .setMessage("Вы хотите сбросить пользовательские ресурсы?")
-                    .setPositiveButton("Да") { _, _ ->
+                    .setTitle("РўСЂРµР±СѓРµС‚СЃСЏ РІРЅРёРјР°РЅРёРµ")
+                    .setMessage("Р’С‹ С…РѕС‚РёС‚Рµ СЃР±СЂРѕСЃРёС‚СЊ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРёРµ СЂРµСЃСѓСЂСЃС‹?")
+                    .setPositiveButton("Р”Р°") { _, _ ->
                         removeStaticFiles()
                         removeResourceFiles()
                         Toast.makeText(this, getString(R.string.user_resources_was_reset), Toast.LENGTH_SHORT).show()
                     }
-                    .setNegativeButton("Нет", null)
+                    .setNegativeButton("РќРµС‚", null)
                     .show()
                 true
             }
@@ -774,7 +772,7 @@ else if (theme == 1) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MOD
 
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
 
-                Toast.makeText(this, "Системная тема", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "РЎРёСЃС‚РµРјРЅР°СЏ С‚РµРјР°", Toast.LENGTH_SHORT).show()
                 true
             }
 
@@ -786,7 +784,7 @@ else if (theme == 1) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MOD
 
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
-                Toast.makeText(this, "Светлая тема", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "РЎРІРµС‚Р»Р°СЏ С‚РµРјР°", Toast.LENGTH_SHORT).show()
                 true
             }
 
@@ -798,7 +796,7 @@ else if (theme == 1) AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MOD
 
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 
-                Toast.makeText(this, "Темная тема", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "РўРµРјРЅР°СЏ С‚РµРјР°", Toast.LENGTH_SHORT).show()
                 true
             }
 
