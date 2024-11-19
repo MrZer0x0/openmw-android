@@ -23,7 +23,7 @@
     <CheckBoxPreference
             android:key="shaders_key"
             android:title="Включить шейдеры"
-            android:summary="Данная опция использовать карты нормалей и карты отражений(может снизить производительность!) "/>
+            android:summary="Данная опция позволит использовать карты нормалей и карты отражений (может существенно снизить производительность!) "/>
     <CheckBoxPreference
             android:key="preload_key"
             android:title="Включить теневую подгрузку локаций"
