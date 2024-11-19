@@ -541,7 +541,15 @@ class MainActivity : AppCompatActivity() {
 	writeSetting("Input", "enable gyroscope", if(prefs.getBoolean("gyroscope_key", false)) "true" else "false")
 	writeSetting("Cells", "preload doors", if(prefs.getBoolean("preload_key", false)) "true" else "false")
 	writeSetting("Terrain", "distant terrain", if(prefs.getBoolean("terrain_key", false)) "true" else "false")
-writeSetting("Shaders", "force shaders", if(prefs.getBoolean("shaders_key", false)) "true" else "false")
+val shadersEnabled = prefs.getBoolean("shaders_key", false)
+writeMultipleSettings("Shaders", mapOf(
+    "force shaders" to shadersEnabled.toString(),
+    "auto use object normal maps" to if (shadersEnabled) "true" else "false",
+    "auto use object specular maps" to if (shadersEnabled) "true" else "false",
+    "auto use terrain normal maps" to if (shadersEnabled) "true" else "false",
+    "auto use terrain specular" to if (shadersEnabled) "true" else "false"
+))
+
     }
 
     private fun startGame() {
@@ -698,11 +706,7 @@ writeSetting("Shaders", "force shaders", if(prefs.getBoolean("shaders_key", fals
 "object paging min size cost multiplier" to "1",
 "player shadows" to "true",
 "actor shadows" to "true",
-"maximum shadow map distance" to "4096",
-"auto use object normal maps" to "true",
-"auto use object specular maps" to "true",
-"auto use terrain normal maps" to "true",
-"auto use terrain specular" to "true"
+"maximum shadow map distance" to "4096"
 
 			
 			
