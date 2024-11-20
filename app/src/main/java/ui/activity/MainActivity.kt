@@ -568,7 +568,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val dialog = ProgressDialog.show(
-            this, "", "Запуск OpenMW Mobile...", true)
+            this, "", "Starting OpenMW Mobile...", true)
 
         val activity = this
 
@@ -667,7 +667,7 @@ class MainActivity : AppCompatActivity() {
                         "prevent merchant equipping" to "true",
                         "framerate limit" to "60.60",
                         "color topic enable" to "true",
-			"preferred locales" to "ru,en",
+			"preferred locales" to "en,ru",
 			"shader" to "true",
 			"small feature culling pixel size" to "9.0",
 			"reverse z" to "true",
@@ -718,7 +718,7 @@ class MainActivity : AppCompatActivity() {
                     runGame()
                 }
             } catch (e: IOException) {
-                Log.e(TAG, "Невозможно записать фаил настроек.", e)
+                Log.e(TAG, "Unable to write the settings file.", e)
             }
         }
         th.start()
@@ -738,27 +738,27 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_reset_user_config -> {
                 AlertDialog.Builder(this)
-                    .setTitle("Требуется внимание")
-                    .setMessage("Вы хотите сбросить пользовательские настройки?")
-                    .setPositiveButton("Да") { _, _ ->
+                    .setTitle("Warning")
+                    .setMessage("Do you want to reset the user settings?")
+                    .setPositiveButton("Yea") { _, _ ->
                         removeUserConfig()
                         Toast.makeText(this, getString(R.string.user_config_was_reset), Toast.LENGTH_SHORT).show()
                     }
-                    .setNegativeButton("Нет", null)
+                    .setNegativeButton("No", null)
                     .show()
                 true
             }
 
             R.id.action_reset_user_resources -> {
                 AlertDialog.Builder(this)
-                    .setTitle("Требуется внимание")
-                    .setMessage("Вы хотите сбросить пользовательские ресурсы?")
-                    .setPositiveButton("Да") { _, _ ->
+                    .setTitle("Warning")
+                    .setMessage("Do you want to reset the user resources?")
+                    .setPositiveButton("Yes") { _, _ ->
                         removeStaticFiles()
                         removeResourceFiles()
                         Toast.makeText(this, getString(R.string.user_resources_was_reset), Toast.LENGTH_SHORT).show()
                     }
-                    .setNegativeButton("Нет", null)
+                    .setNegativeButton("No", null)
                     .show()
                 true
             }
@@ -771,7 +771,7 @@ class MainActivity : AppCompatActivity() {
 
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
 
-                Toast.makeText(this, "Системная тема", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "System", Toast.LENGTH_SHORT).show()
                 true
             }
 
@@ -783,7 +783,7 @@ class MainActivity : AppCompatActivity() {
 
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
-                Toast.makeText(this, "Светлая тема", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Light", Toast.LENGTH_SHORT).show()
                 true
             }
 
@@ -795,7 +795,7 @@ class MainActivity : AppCompatActivity() {
 
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 
-                Toast.makeText(this, "Темная тема", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Dark", Toast.LENGTH_SHORT).show()
                 true
             }
 
