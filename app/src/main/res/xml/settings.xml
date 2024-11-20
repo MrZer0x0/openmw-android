@@ -23,11 +23,15 @@
     <CheckBoxPreference
             android:key="preload_key"
             android:title="Включить теневую подгрузку локаций"
-            android:summary="Ускоряет подгрузку локаций при путешествиях но снижает производительность"/>
+            android:summary="Ускоряет подгрузку локаций при путешествиях, но снижает производительность"/>
+    <CheckBoxPreference
+            android:key="shadows_key"
+            android:title="Включить тени Игрока и NPC"
+            android:summary="Включает тени для Игрока и всех NPC и существ (Стабильно)"/>
     <CheckBoxPreference
             android:key="shadowso_key"
             android:title="Включить тени объектов"
-            android:summary="Для использования требуется ВКЛ тени игрока и NPC! (Нестабально!)"/>
+            android:summary="Для использования требуется ВКЛ тени игрока и NPC! (Нестабально)"/>
     <CheckBoxPreference
             android:key="sp_key"
             android:title="Включить мягкие частицы"
