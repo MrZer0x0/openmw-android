@@ -22,24 +22,6 @@
             app:showAsAction="never"
             />
 
-            <item
-                android:id="@+id/action_theme"
-                android:title="@string/action_theme"
-                app:showAsAction="never" >
-                 <menu>
-
-                   <item android:id="@+id/action_theme_system"
-                     android:title="@string/action_theme_system"/>
-
-                   <item android:id="@+id/action_theme_light"
-                     android:title="@string/action_theme_light" />
-
-                   <item android:id="@+id/action_theme_dark"
-                     android:title="@string/action_theme_dark" />
-                 </menu>
-            </item>
-
-
         <item
             android:id="@+id/action_generate_navmesh"
             android:title="@string/action_generate_navmesh"
