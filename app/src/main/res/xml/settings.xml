@@ -19,20 +19,37 @@
     <CheckBoxPreference
             android:key="terrain_key"
             android:title="Включить удалённый ландшафт"
-            android:summary="Данная опция увеличит максимальную дальность прорисовки (может снизить производительность!) "/>
-    <CheckBoxPreference
-            android:key="shaders_key"
-            android:title="Включить шейдеры"
-            android:summary="Данная опция позволит использовать карты нормалей и карты отражений (может существенно снизить производительность!) "/>
+            android:summary="Данная опция увеличит максимальную дальность прорисовки"/>
     <CheckBoxPreference
             android:key="preload_key"
             android:title="Включить теневую подгрузку локаций"
-            android:summary="Данная опция подгружает локацию *за дверью*, что ускоряет подгрузку локаций при путешествиях (может снизить производительность!) "/>
+            android:summary="Ускоряет подгрузку локаций при путешествиях но снижает производительность"/>
     <CheckBoxPreference
             android:key="shadowso_key"
             android:title="Включить тени объектов"
-            android:summary="Требуется включить тени игрока и NPC! Данная опция включает тени от объектов (Могут вызвать графические артефакты на некотоых ускорителях) "/>
+            android:summary="Для использования требуется ВКЛ тени игрока и NPC! (Нестабально!)"/>
+    <CheckBoxPreference
+            android:key="sp_key"
+            android:title="Включить мягкие частицы"
+            android:summary="Улучшает освещение сцены"/>
+    <CheckBoxPreference
+            android:key="tn_key"
+            android:title="Включить NormalMap почвы"
+            android:summary="Объемные текстуры почвы (Необходимо наличие _n.dds текстур в кеше)"/>
+    <CheckBoxPreference
+            android:key="on_key"
+            android:title="Включить NormalMap объектов"
+            android:summary="Объемные текстуры объектов (Необходимо наличие _n.dds текстур в кеше)"/>
+    <CheckBoxPreference
+            android:key="ts_key"
+            android:title="Включить SpecularMap почвы"
+            android:summary="Текстуры отражения почвы (Необходимо наличие _spec.dds текстур в кеше)"/>
+    <CheckBoxPreference
+            android:key="os_key"
+            android:title="Включить SpecularMap объектов"
+            android:summary="Текстуры отражения объектов (Необходимо наличие _spec.dds текстур в кеше)"/>
     </PreferenceCategory>
+    
 
     <PreferenceCategory android:title="@string/pref_ui">
         <Preference
