@@ -14,54 +14,61 @@
             android:key="pref_mods"
             />
     </PreferenceCategory>
-<PreferenceCategory android:title="@string/category_performance">
     
-    <CheckBoxPreference
+    <PreferenceCategory android:title="@string/category_performance">
+    
+        <CheckBoxPreference
             android:key="terrain_key"
-            android:title="Включить удалённый ландшафт"
-            android:summary="Данная опция увеличит максимальную дальность прорисовки"/>
-    <CheckBoxPreference
+            android:title="Enable remote landscape"
+            android:summary="This option increases the maximum rendering distance"/>
+        
+        <CheckBoxPreference
             android:key="preload_key"
-            android:title="Включить теневую подгрузку локаций"
-            android:summary="Ускоряет подгрузку локаций при путешествиях, но снижает производительность"/>
-    <CheckBoxPreference
+            android:title="Enable shadow loading of locations"
+            android:summary="Speeds up loading of locations while traveling, but reduces performance"/>
+        
+        <CheckBoxPreference
             android:key="shadows_key"
-            android:title="Включить тени Игрока и NPC"
-            android:summary="Включает тени для Игрока и всех NPC и существ (Стабильно)"/>
-    <CheckBoxPreference
+            android:title="Enable player and NPC shadows"
+            android:summary="Enables shadows for the player and all NPCs and creatures (Stable)"/>
+        
+        <CheckBoxPreference
             android:key="shadowso_key"
-            android:title="Включить тени объектов"
-            android:summary="Для использования требуется ВКЛ тени игрока и NPC! (Нестабально)"/>
-    <CheckBoxPreference
+            android:title="Enable object shadows"
+            android:summary="Requires player and NPC shadows to be ENABLED! (Unstable)"/>
+        
+        <CheckBoxPreference
             android:key="sp_key"
-            android:title="Включить мягкие частицы"
-            android:summary="Улучшает освещение сцены"/>
-    <CheckBoxPreference
+            android:title="Enable soft particles"
+            android:summary="Improves scene lighting"/>
+        
+        <CheckBoxPreference
             android:key="tn_key"
-            android:title="Включить NormalMap почвы"
-            android:summary="Объемные текстуры почвы (Необходимо наличие _n.dds текстур в кеше)"/>
-    <CheckBoxPreference
+            android:title="Enable NormalMap for terrain"
+            android:summary="3D textures for terrain (Requires _n.dds textures in cache)"/>
+        
+        <CheckBoxPreference
             android:key="on_key"
-            android:title="Включить NormalMap объектов"
-            android:summary="Объемные текстуры объектов (Необходимо наличие _n.dds текстур в кеше)"/>
-    <CheckBoxPreference
+            android:title="Enable NormalMap for objects"
+            android:summary="3D textures for objects (Requires _n.dds textures in cache)"/>
+        
+        <CheckBoxPreference
             android:key="ts_key"
-            android:title="Включить SpecularMap почвы"
-            android:summary="Текстуры отражения почвы (Необходимо наличие _spec.dds текстур в кеше)"/>
-    <CheckBoxPreference
+            android:title="Enable SpecularMap for terrain"
+            android:summary="Reflection textures for terrain (Requires _spec.dds textures in cache)"/>
+        
+        <CheckBoxPreference
             android:key="os_key"
-            android:title="Включить SpecularMap объектов"
-            android:summary="Текстуры отражения объектов (Необходимо наличие _spec.dds текстур в кеше)"/>
+            android:title="Enable SpecularMap for objects"
+            android:summary="Reflection textures for objects (Requires _spec.dds textures in cache)"/>
     </PreferenceCategory>
     
-
     <PreferenceCategory android:title="@string/pref_ui">
         <Preference
             android:title="@string/action_show_screen_controls"
             android:key="pref_controls"
             />
         
-
         <EditTextPreference
             android:key="pref_uiScaling"
             android:title="@string/pref_uiScaling"
@@ -79,9 +86,10 @@
             android:defaultValue="@string/pref_mouse_mode_default"
             android:summary="%s"
             />
-<CheckBoxPreference
+        
+        <CheckBoxPreference
             android:key="gyroscope_key"
-            android:title="Включить управление гироскопом"/>
+            android:title="Enable gyro control"/>
         
         <CheckBoxPreference
             android:key="pref_hide_controls"
@@ -120,7 +128,7 @@
         <CheckBoxPreference
             android:key="pref_avoid16bits"
             android:title="@string/pref_avoid16bits" 
-            android:summary="Внимание! Экспериментальная опция, может привести к графическим искажениям"
+            android:summary="Warning! Experimental option, may lead to graphical distortions"
             android:defaultValue="true"/>
 
         <ListPreference
@@ -135,7 +143,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/pref_advanced">
-
+        
         <ListPreference
             android:key="pref_encoding"
             android:summary="%s"
