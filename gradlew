@@ -9,6 +9,10 @@
 cp patch/immersive_sneak_eye.dds app/src/main/assets/libopenmw/resources/vfs/sneak_eye.dds
 cp patch/openmw_hud.layout app/src/main/assets/libopenmw/resources/vfs/mygui/openmw_hud.layout
 cp patch/openmw_chargen_race.layout app/src/main/assets/libopenmw/resources/vfs/mygui/openmw_chargen_race.layout
+cp patch/crosshair.dds app/src/main/assets/libopenmw/resources/vfs/crosshair.dds
+cp patch/openmw_hud_box.skin.xml app/src/main/assets/libopenmw/resources/vfs/mygui/openmw_hud_box.skin.xml
+
+
 
 # Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
 DEFAULT_JVM_OPTS=""
