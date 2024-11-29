@@ -31,7 +31,7 @@
     <CheckBoxPreference
             android:key="shadowso_key"
             android:title="Включить тени объектов"
-            android:summary="Для использования требуется ВКЛ тени игрока и NPC! (Нестабально)"/>
+            android:summary="Для использования требуется ВКЛ тени игрока и NPC! (Нестабильно)"/>
     <CheckBoxPreference
             android:key="sp_key"
             android:title="Включить мягкие частицы"
