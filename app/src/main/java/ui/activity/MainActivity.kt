@@ -704,13 +704,10 @@ class MainActivity : AppCompatActivity() {
 "object paging min size cost multiplier" to "1",
 "player shadows" to "true",
 "actor shadows" to "true",
-"maximum shadow map distance" to "4096"
-"classic falloff" to "true"	
-"force per pixel lighting" to "true"
+"maximum shadow map distance" to "4096",
+"classic falloff" to "true",	
+"force per pixel lighting" to "true",
 "match sunlight to sun" to "true"
-
-			
-			
 		
                 ))
 		
