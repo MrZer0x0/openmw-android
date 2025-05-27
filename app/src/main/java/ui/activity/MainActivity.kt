@@ -546,6 +546,8 @@ class MainActivity : AppCompatActivity() {
 	writeSetting("Shaders", "auto use object specular maps", if(prefs.getBoolean("os_key", false)) "true" else "false")
 	writeSetting("Shaders", "auto use terrain specular", if(prefs.getBoolean("ts_key", false)) "true" else "false")
 	writeSetting("Shaders", "soft particles", if(prefs.getBoolean("sp_key", false)) "true" else "false")
+	writeSetting("Post Processing", "enabled", if(prefs.getBoolean("pp_key", true)) "true" else "false")
+	writeSetting("Groundcover", "enabled", if(prefs.getBoolean("gc_key", true)) "true" else "false")
     }
 
     private fun startGame() {
@@ -682,7 +684,7 @@ class MainActivity : AppCompatActivity() {
 "weapon sheathing" to "true",
 "shield sheathing" to "true",
 			"only appropriate ammunition bypasses resistance" to "true",
-		"max lights" to "8",
+		"max lights" to "16",
 		"enable" to "true",
 		"paging" to "true",
 		"load unsupported nif files" to "true",
@@ -703,6 +705,9 @@ class MainActivity : AppCompatActivity() {
 "player shadows" to "true",
 "actor shadows" to "true",
 "maximum shadow map distance" to "4096"
+"classic falloff" to "true"	
+"force per pixel lighting" to "true"
+"match sunlight to sun" to "true"
 
 			
 			
