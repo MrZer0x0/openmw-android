@@ -379,7 +379,7 @@ class MainActivity : AppCompatActivity() {
 
         val dm = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(dm)
-        return maxOf(dm.heightPixels, dm.widthPixels) / 1024.0f
+        return maxOf(dm.heightPixels, dm.widthPixels) / 1280.0f
     }
 
     /**
