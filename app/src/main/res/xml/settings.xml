@@ -25,6 +25,14 @@
             android:title="Включить теневую подгрузку локаций"
             android:summary="Ускоряет подгрузку локаций при путешествиях, но снижает производительность"/>
     <CheckBoxPreference
+            android:key="gc_key"
+            android:title="Включить Травяной покров"
+            android:summary="Необходимо подключить плагин с травяным покровом"/>
+    <CheckBoxPreference
+            android:key="pp_key"
+            android:title="Включить Постпроцессинг"
+            android:summary="Включает дополнительные шейдеры и обработку изображения (F2 меню постпроцессинга)"/>
+    <CheckBoxPreference
             android:key="shadows_key"
             android:title="Включить тени Игрока и NPC"
             android:summary="Включает тени для Игрока и всех NPC и существ (Стабильно)"/>
