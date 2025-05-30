@@ -91,8 +91,8 @@ class GameActivity : SDLActivity() {
         System.loadLibrary("SDL2")
 
         try {
-            Os.setenv("OPENMW_GLES_VERSION", "2", true)
-            Os.setenv("LIBGL_ES", "2", true)
+            Os.setenv("OPENMW_GLES_VERSION", "3", true)
+            Os.setenv("LIBGL_ES", "3", true)
         } catch (e: ErrnoException) {
             Log.e("OpenMW", "Failed setting environment variables.")
             e.printStackTrace()
@@ -108,7 +108,14 @@ class GameActivity : SDLActivity() {
         else Os.setenv("LIBGL_AVOID16BITS", "0", true)
 
         Os.setenv("OSG_VERTEX_BUFFER_HINT", "VBO", true)
-        Os.setenv("OPENMW_USER_FILE_STORAGE", Constants.USER_FILE_STORAGE + "/", true)
+        Os.setenv("OSG_GL_TEXTURE_STORAGE", "OFF", true)
+        Os.setenv("OSG_TEXT_SHADER_TECHNIQUE", "ALL", true)
+
+        Os.setenv("LIBGL_SIMPLE_SHADERCONV", "1", true)
+        Os.setenv("LIBGL_INSTANCING", "1", true)
+        Os.setenv("LIBGL_DXTMIPMAP", "1", true)
+
+        //Os.setenv("OPENMW_USER_FILE_STORAGE", Constants.USER_FILE_STORAGE + "/", true)
         //Os.setenv("OSG_NOTIFY_LEVEL", "FATAL", true) //hide osg errors for now, gl4es bug.
         
         val envline: String = PreferenceManager.getDefaultSharedPreferences(this).getString("envLine", "").toString()
@@ -124,7 +131,7 @@ class GameActivity : SDLActivity() {
             }
         }
 
-        System.loadLibrary("GL")
+        System.loadLibrary("ng_gl4es")
         System.loadLibrary("openmw")
     }
 
