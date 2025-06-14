@@ -24,6 +24,7 @@ import android.content.Context
 import android.graphics.Color
 import android.preference.PreferenceManager
 import android.view.KeyEvent
+import android.view.KeyCharacterMap
 import android.view.MotionEvent
 import android.view.View
 import android.widget.Button
@@ -395,6 +396,31 @@ class Osc {
     private val qp: OscHiddenToggle
 
     init {
+
+        // create controls.cfg
+        if (!File(Constants.USER_FILE_STORAGE + "/launcher/controls.cfg").exists()) {
+            File(Constants.USER_FILE_STORAGE + "/launcher/controls.cfg").writeText(
+"//syntax: key or keycode; button text or image to load; default x; default y; visibility\nkey can be single string as w s a d etc or android keycode\nlist of android keycodes www.tempblast.com/ref/akeyscode.htm\nicons are loaded from icons folder, if not found it use simple button with specified text\ndefaul x and default y specify default position of added button, can be changed in app later\nvisibility 0 mean button is not visible in menus, 1 means always visible\n\n")
+
+            File(Constants.USER_FILE_STORAGE + "/launcher/controls-example.cfg").writeText(
+"w;forward;100;200;0\ns;backward.png;200;200;0\n67;delete;300;200;1")
+        }
+
+        val mKeyCharacterMap = KeyCharacterMap.load(KeyCharacterMap.VIRTUAL_KEYBOARD)
+        File(Constants.USER_FILE_STORAGE + "/launcher/controls.cfg").readLines().forEach {
+            val customButton: List<String> = it.split(";")
+            if (customButton.size == 5 && !it.startsWith("//")) {
+                val keyEvent = if (customButton[0].toIntOrNull() == null || customButton[0].toInt() < 10) mKeyCharacterMap.getEvents(customButton[0].toCharArray())[0].getKeyCode().toInt() else customButton[0].toInt()
+                val visibility = if (customButton[4].toInt() == 1) OscVisibility.ESSENTIAL else OscVisibility.NORMAL
+
+                if (File(Constants.USER_FILE_STORAGE + "/launcher/icons/" + customButton[1]).exists())
+                    elements.add(OscImageButton(customButton[0], customButton[1], visibility, R.drawable.inventory, customButton[2].toInt(), customButton[3].toInt(), keyEvent, false))
+                else
+                    elements.add(OscHiddenButton(customButton[0], visibility, customButton[2].toInt(), customButton[3].toInt(), customButton[1], keyEvent))
+            }
+
+        }
+
         val btnRowSpacing = 74
         val btnColumnSpacing = 65
 
