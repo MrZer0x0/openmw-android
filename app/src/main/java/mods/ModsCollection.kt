@@ -68,8 +68,9 @@ class ModsCollection(private val type: ModType,
      * Also checks to make sure only installed mods are inserted.
      */
     private fun initDb() {
-        val builtIn = arrayOf("Morrowind", "Tribunal", "Bloodmoon")
+        val builtIn = arrayOf("Morrowind", "Tribunal", "Bloodmoon", "GFM", "Rebirth_Main", "OAAB_Data", "ChaosHeart", "MFR", "Tamriel_Data", "TR_Mainland", "Cyr_Main", "Sky_Main", "Wares_base", "NOD_Core", "Nirn_Core", "MFR_TR_Patch", "MFR_Update", "ChaosHeartPatch", "Nirn_Pack_001", "Nirn_Pack_002", "Nirn_Pack_003", "Nirn_Pack_004", "Nirn_Pack_005")
         initDbMods(builtIn.map { "$it.esm" }, ModType.Plugin)
+	initDbMods(builtIn.map { "$it.esp" }, ModType.Plugin)
         initDbMods(builtIn.map { "$it.bsa" }, ModType.Resource)
     }
 
@@ -126,9 +127,24 @@ class ModsCollection(private val type: ModType,
            }
 
            if(type == ModType.Groundcover) {
-               blacklist.add("Morrowind.esm")
-               blacklist.add("Tribunal.esm")
-               blacklist.add("Bloodmoon.esm")
+blacklist.add("Morrowind.esm")
+blacklist.add("Tribunal.esm")
+blacklist.add("Bloodmoon.esm")
+blacklist.add("GFM.esm")
+blacklist.add("Rebirth_Main.esm")
+blacklist.add("OAAB_Data.esm")
+blacklist.add("ChaosHeart.esm")
+blacklist.add("MFR.esm")
+blacklist.add("Tamriel_Data.esm")
+blacklist.add("TR_Mainland.esm")
+blacklist.add("Cyr_Main.esm")
+blacklist.add("Sky_Main.esm")
+blacklist.add("NOD_Core.esm")
+blacklist.add("Wares_base.esm")
+blacklist.add("Nirn_Core.esp")
+blacklist.add("MFR_TR_Patch.esp")
+blacklist.add("MFR_Update.esp")
+blacklist.add("ChaosHeartPatch.esp")
                blacklist.add("adamantiumarmor.esp")
                blacklist.add("AreaEffectArrows.esp")
                blacklist.add("bcsounds.esp")
